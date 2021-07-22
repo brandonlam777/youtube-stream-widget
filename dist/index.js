@@ -39,7 +39,7 @@ const attach_ipc = function () {
     });
 };
 const init_tray = function () {
-    tray = new electron_1.Tray('./dist/images/youtube_social_circle_dark.png');
+    tray = new electron_1.Tray(path.join(__dirname, '../src/images/youtube_social_circle_dark.png'));
     const contextMenu = electron_1.Menu.buildFromTemplate([
         { role: "quit" }
     ]);
@@ -47,7 +47,7 @@ const init_tray = function () {
     tray.setContextMenu(contextMenu);
 };
 const load_settings = function () {
-    let config = fs.readFileSync('./dist/config.json', 'utf-8');
+    let config = fs.readFileSync(path.join(__dirname, '../src/config.json'), 'utf-8');
     if (!config) {
         console.log(`Missing config.json file, exiting.`);
         return process.exit(1);
