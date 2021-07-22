@@ -93,4 +93,4 @@ channels.json
 streams.json
 
 #Config files
-dist/config.json
+src/config.json
